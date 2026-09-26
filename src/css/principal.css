@@ -1,0 +1,35 @@
+body {
+  background: #0A192F;
+  background: linear-gradient(90deg,rgba(10, 25, 47, 1) 0%, rgba(11, 45, 94, 1) 51%, rgba(11, 45, 94, 1) 100%);
+  font-family: 'Montserrat'
+}
+
+.texto_principal {
+	font-family: 'Montserrat';font-size: 22px;
+  color: #ccd6f6;
+  text-align: center;
+  color: #fff;
+  text-shadow: 
+  0 0 10px #fff, 
+  0 0 20px #fff, 
+  0 0 30px #fff, 
+  0 0 40px #228dff,
+  0 0 70px #228dff, 
+  0 0 80px #228dff, 
+  0 0 100px #228dff, 
+  0 0 150px #228dff;
+}
+
+.texto_botones {
+  font-family: verdana;
+  font-size: 20px;
+}
+.texto_secundario{
+
+}
+.texto_nombre{
+
+}
+.botones_principales{
+    
+}
