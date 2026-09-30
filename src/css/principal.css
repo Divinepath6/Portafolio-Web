@@ -4,48 +4,71 @@ body {
   font-family: 'Montserrat'
 }
 
-.texto_principal {
-	font-family: 'Montserrat';font-size: 22px;
+.texto-principal {
+	font-family: 'Montserrat';
+  font-size: 38px;
   color: #ccd6f6;
   text-align: center;
   color: #fff;
   text-shadow: 
-  0 0 10px #fff, 
-  0 0 20px #fff, 
-  0 0 30px #fff, 
-  0 0 40px #228dff,
-  0 0 70px #228dff, 
-  0 0 80px #228dff, 
-  0 0 100px #228dff, 
-  0 0 150px #228dff;
+  0 0 5px #b6c6f992, 
+  0 0 10px #b6c6f992, 
+  0 0 20px #ccd6f67f, 
+  0 0 30px #ccd6f64f;
 }
 
-.texto_botones {
-  font-family: verdana;
+
+.texto-nombre {
+  color: #8892b0;
   font-size: 20px;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  margin-top: 6px;
 }
-.texto_secundario{
 
+.texto-botones {
+  color: #ccd6f6;
+  font-size: 16px;
 }
-.texto_nombre{
+.texto-secundario{
+  color: #8892b0;
+  font-size: 14px;
+}
 
+
+
+
+.botones-principales{
+  width: 110px;
+  height: flex;
+  background-color: #111827; 
+  box-shadow: 5px 5px 0px 0px #381ca8a3; 
+  gap: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.botones_principales{
-    
+
+.cv-icono:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px 0px #150e65a3;
 }
+
+
 
 
 
 /* CSS del ICONO  ============ */
 .cv-icono {
-  width: 90px;
-  height: 120px;
+  width: 55px;
+  height: 75px;
   background-color: #111827; 
-  border-radius: 16px;
-  padding: 16px;
+  border-radius: 12px;
+  padding: 12px;
   box-sizing: border-box;
   
-  box-shadow: 7px 7px 0px 0px #6366f1; 
+  box-shadow: 7px 7px 0px 0px #381ca8a3; 
   
   display: flex;
   flex-direction: column;
@@ -60,24 +83,117 @@ body {
 }
 
 .cv-texto {
-  color: #6366f1; 
+  color: #ccd6f6; 
   font-family: system-ui, -apple-system, sans-serif;
   font-weight: 900;
-  font-size: 26px;
+  font-size: 18px;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .cv-linea {
-  height: 6px;
-  background-color: #6366f1;
-  border-radius: 10px;
+  height: 2px;
+  background-color: #381ca8a3;
+  border-radius: 2px;
+}
+.cv-linea.long  { width: 100%;}
+.cv-linea.short { width: 50%; }
+
+
+
+.separacion-linea {
+  height: 5px;
+  background-color: #2e0065cf;
+  width: 90%;
+  border-radius: 2px;
+  align-self: center;
 }
 
-.cv-linea.long {
+
+.contenedor-menu {
+  display: flex;
+  flex-direction: column; 
+  gap: 16px;
+  width:  100%;
+   height: 100%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.contenedor-menu.menu-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 40px; 
+  box-sizing: border-box;
+  
+  background: rgba(10, 25, 47, 0.85); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  
+  z-index: 1000;
+}
+.menu-izquierda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 2px;
+}
+.menu-centro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.menu-derecha {
+  display: flex;
+  align-items: center;
+}
+.contenedor-cuerpo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 180px 40px 24px 40px; 
+  box-sizing: border-box;
+  background: transparent; 
 }
 
-.cv-linea.short {
-  width: 50%;
+
+
+
+.tarjeta-tecnologias {
+  background-color: #103d46e6; 
+  
+  border: 1px solid rgba(43, 8, 74, 0.26); 
+  
+  border-radius: 6px; 
+  
+  padding: 24px 28px; 
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-tecnologias:hover {
+  transform: translateY(-3px);
+  border-color: rgba(99, 102, 241, 0.4); 
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
