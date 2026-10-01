@@ -1,14 +1,15 @@
-//import { useState } from 'react'
+import { useState } from 'react'
 import '../css/principal.css'
 import CvIcono from '../components/CvIcono'
-import MenuContenedor from '../components/MenuContenedor'
 import BtnComun from '../components/BtnComun'
 import CvDocumento from '../assets/files/CV.pdf'
 
-function PantallaPrincipal(){
-    const onclickDescargarCV = () => {
 
+function PantallaPrincipal(){
+    const onclickDescargarCV = async () => {
+        window.open(CvDocumento, '_blank', 'noopener,noreferrer');
     }
+
     const onclickExperiencia = () => {
 
     }
@@ -16,7 +17,10 @@ function PantallaPrincipal(){
 
     }
     const onclickContactame = () => {
-
+        const email = 'jesus_cermalopez@outlook.com'; 
+        const asunto = encodeURIComponent('Contacto desde tu sitio web');
+        const mensaje = encodeURIComponent('Hola Jesús,\n\nMe gustaría ponerme en contacto contigo...');
+        window.location.href = `mailto:${email}?subject=${asunto}&body=${mensaje}`;
     }
 
     return(
@@ -39,16 +43,48 @@ function PantallaPrincipal(){
                 </div>
             </div>
 
-            
-
             <div className='contenedor-cuerpo'>
                 <div className='separacion-linea '/>
-                <div className="contenido-texto">
-                    Backend: Desarrollo de API utilizando C# usando las siguientes tecnologías: 
-                    .Net, ASP.NET Core Web API con implementación de conexiones y consultas a SQL Server.
+                <div className='tarjeta-tecnologia' >
+                    <div className="texto-secundario">
+                        Backend: Desarrollo de API utilizando C# usando las siguientes tecnologías: 
+                        .Net, ASP.NET Core Web API con implementación de conexiones y consultas a SQL Server.
+                    </div>
+                    <div className="contenido-logos">
+                        LOGOS LOGOS LOGOS
+                    </div>
                 </div>
-                <div className="contenido-logos">
+                
+                <div className='tarjeta-tecnologia' >
+                    <div className="texto-secundario">
+                        He hecho de FULL STACK usando el framework de Odoo usando tanto python como XML
+                        Ademas de implementar Control de versiones con GitHub       
+                    </div>
+                    <div className="contenido-logos">
+                        LOGOS LOGOS LOGOS
+                    </div>
                 </div>
+
+                <div className='tarjeta-tecnologia' >
+                    <div className="texto-secundario">
+                        Frontend:
+                        Experiencia usando TypeScript en el diseño de paginas web usando la librería React 
+                    </div>
+                    <div className="contenido-logos">
+                        LOGOS LOGOS LOGOS
+                    </div>
+                </div>
+                <div className='separacion-linea '/>
+
+                <div className="tarjeta-proyecto">
+                    <img 
+                        src="ruta-de-tu-imagen.jpg" 
+                        alt="Proyecto" 
+                        className="imagen-proyecto" 
+                    />
+                    <BtnComun onClick = {() =>{}} texto={'Ver Código en GitHub'} />
+                </div>
+            
             </div>
         </>
     )
