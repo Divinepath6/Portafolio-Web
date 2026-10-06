@@ -3,7 +3,7 @@ import CvIcono from '../components/BtnCv'
 import BtnComun from '../components/BtnComun'
 import CvDocumento from '../assets/files/CV.pdf'
 import BtnIcono from '../components/BtnIcono'
-// Reemplaza con tus nombres de archivo reales
+//SVG
 import pythonSVG from '../assets/Icons/python.svg'
 import dotnetSVG from '../assets/Icons/dotnet.svg'
 import sqlSVG from '../assets/Icons/sql.svg'
@@ -43,19 +43,17 @@ function PantallaPrincipal(){
         <>
             <div className="contenedor-menu menu-sticky">
                 <div className="menu-izquierda">
-                <div className="texto-principal">FULL STACK</div>
-                <div className="texto-principal">DEVELOPER</div>
-                <div className="texto-nombre">JESÚS CERVANTES</div>
+                    <span className="texto-principal">FULL STACK DEVELOPER</span>
+                    <span className="texto-nombre">JESÚS CERVANTES</span>
                 </div>
-
-                <div className="menu-centro">
-                <BtnComun onClick={ () => {onclickScroll('seccionExperiencia')}} texto={'Experiencia'} title='Experiencia'/>
-                <BtnComun onClick={() => {onclickScroll('seccionProyectos')}} texto={'Proyectos'} title='Proyectos'/>
-                <BtnComun onClick={() => {onclickScroll('seccionContacto')}} texto={'Contáctame'} title='Contáctame' />
-                </div>
-
                 <div className="menu-derecha">
-                <CvIcono onClick={onclickDescargarCV} title='Descargar CV'/>
+                    <div className="menu-centro">
+                    <BtnComun onClick={() => onclickScroll('seccionExperiencia')} texto={'Experiencia'} />
+                    <BtnComun onClick={() => onclickScroll('seccionProyectos')} texto={'Proyectos'} />
+                    <BtnComun onClick={() => onclickScroll('seccionContacto')} texto={'Contáctame'} />
+                    </div>
+                    
+                    <CvIcono onClick={onclickDescargarCV} />
                 </div>
             </div>
 
