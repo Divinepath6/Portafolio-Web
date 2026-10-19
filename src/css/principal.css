@@ -1,7 +1,22 @@
 body {
-  background: #0A192F;
-  background: linear-gradient(90deg,rgba(10, 25, 47, 1) 0%, rgba(11, 45, 94, 1) 51%, rgba(11, 45, 94, 1) 100%);
+ /* background: #010a14;*/
+  background: linear-gradient(180deg, rgb(19, 71, 134) 0%, rgb(11, 43, 113) 100%);
   font-family: 'Montserrat'
+}
+:root {
+  --color-tarjetas: #102c68;
+  --color-boton: #390e89; 
+  --color-boton-sombra: #260457; 
+  --color-separacion-linea: rgba(74, 2, 141, 0.874);
+  --color-menu: rgb(25, 35, 101);
+}
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .texto-principal {
@@ -11,32 +26,32 @@ body {
   text-align: center;
   color: #fff;
   text-shadow: 
-  0 0 5px #b6c6f992, 
+  0 0 5px #cad6fdc4, 
   0 0 10px #b6c6f992, 
-  0 0 20px #ccd6f67f, 
-  0 0 30px #ccd6f64f;
+  0 0 20px #ccd6f6a0, 
+  0 0 30px #ccd6f680;
 
 }
 
 .texto-nombre {
-  color: #8892b0;
-  font-size: 20px;
+  color: #aebff0;
+  font-size: 20x;
   font-family: 'Montserrat';
   font-weight: 500;
   margin-top: 5px;
 }
 
 .texto-botones {
-  color: #ccd6f6;
-  font-size: 16px;
+  color: #ffffff;
+  font-size: 17px;
 }
 .texto-secundario{
-  color: #ccd6f6;
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 19px;
   text-align: justify;
   width: 80%;
   margin: 0 auto; 
-  text-align: left;
+  text-align: justify;
   flex: 1;
 }
 
@@ -44,10 +59,10 @@ body {
 
 
 .botones-principales{
-  width: 110px;
+  width: 120px;
   height: flex;
-  background-color: #111827; 
-  box-shadow: 5px 5px 0px 0px #381ca8a3; 
+  background-color: var(--color-boton);
+  box-shadow: 5px 5px 0px 0px var(--color-boton-sombra);
   gap: 8px;
   padding: 8px;
   box-sizing: border-box;
@@ -68,12 +83,11 @@ body {
 .cv-icono {
   width: 52px;
   height: 65px;
-  background-color: #111827; 
-  border-radius: 10px;
+  background-color: var(--color-boton);
   padding: 8px;
   box-sizing: border-box;
   
-  box-shadow: 4px 4px 0px 0px #381ca8a3; 
+  box-shadow: 4px 4px 0px 0px var(--color-boton-sombra);
   
   display: flex;
   flex-direction: column;
@@ -88,7 +102,7 @@ body {
 }
 
 .cv-texto {
-  color: #ccd6f6; 
+  color: #ffffff; 
   font-family: system-ui, -apple-system, sans-serif;
   font-weight: 900;
   font-size: 18px;
@@ -98,7 +112,7 @@ body {
 
 .cv-linea {
   height: 2px;
-  background-color: #381ca8a3;
+  background-color: var(--color-boton-sombra);
   border-radius: 2px;
 }
 .cv-linea.long  { width: 100%;}
@@ -108,8 +122,8 @@ body {
 
 .separacion-linea {
   height: 5px;
-  background-color: #2e0065cf;
-  width: 90%;
+  background-color: var(--color-separacion-linea);
+  width: 100%;
   margin: 20px;
   border-radius: 2px;
   align-self: center;
@@ -138,12 +152,12 @@ body {
   padding: 10px 40px;
   box-sizing: border-box;
   
-  background: rgba(10, 25, 47, 0.85); 
+  background:var(--color-menu); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   
   border-bottom: 1px solid rgba(99, 102, 241, 0.25);
-  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  box-shadow: 0 10px 20px -10px rgba(2, 12, 27, 0.31);
   
   z-index: 1000;
 }
@@ -188,7 +202,7 @@ body {
 
 
 .tarjeta-tecnologia {
-  background-color: #103d46e6; 
+  background-color: var(--color-tarjetas);
   
   border: 1px solid rgba(43, 8, 74, 0.26); 
   column-count: 2;
@@ -203,6 +217,31 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
+  text-align: justify;
+
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+}
+
+.tarjeta-tecnologia-vertical {
+  background-color: var(--color-tarjetas);
+  
+  border: 1px solid rgba(43, 8, 74, 0.26); 
+  column-count: 1;
+  column-gap: 10px;
+  border-radius: 6px; 
+  
+  padding: 24px 28px; 
+  width: 32%;
+  box-sizing: border-box;
+  height: 320px;
+  max-height: 420px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  text-align: justify;
 
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 
@@ -221,11 +260,12 @@ body {
   height: 38px;
   padding: 4px; 
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  
+  filter:   invert(100%);
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-
+/*drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4))*/
 
 /* tarjetas de proyectos */  /* tarjetas de proyectos */ /* tarjetas de proyectos */
 
@@ -235,13 +275,13 @@ body {
   justify-content: space-between;
   align-items: center; 
   
-  background: linear-gradient(135deg, #132a4a 0%, #0a192f 100%); 
-  padding: 20px; 
+  background: var(--color-tarjetas);
+  padding: 15px; 
   width: 100%;
-  max-width: 700px; 
+  max-width: 750px; 
   max-height: 620px; 
   min-height: 300px; 
-  
+  gap: 5px 0px;
   box-sizing: border-box;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
 }
@@ -257,7 +297,7 @@ body {
 .div-columnas {
   display: flex;
   flex-direction: row;
-  gap: 5px; 
+  gap: 5px 0px; 
   width: 100%;
   align-items: stretch; 
 }
@@ -265,31 +305,45 @@ body {
 .columna-1 {
   width: 75%; 
   display: flex;
+  gap: 0px;
 }
 
 .columna-2 {
   width: 30%;
   display: flex;
+  flex: 1;
+  gap: 0px;
 }
 
 .div-filas {
   display: flex;
   flex-direction: column; 
-  gap: 16px; 
+  gap: 16px 0px; 
   width: 100%;
   height: 100%;
 }
 
-
-.columna-1 .tarjeta-proyecto {
+.div-columnas-certificado {
+  display: flex;
+  flex-direction: row;
+  gap: 30px 40px; 
   width: 100%;
-  height: 100%; 
 }
 
-.columna-2 .tarjeta-proyecto {
+.div-certificado {
+  display: flex;
+  flex-direction: column; 
+  gap: 50px; 
   width: 100%;
+  height: 100%;
+}
+.columna-certificado {
+  width: 50%; 
+  display: flex;
   flex: 1;
+  gap: 30px 30px 30px 30px; 
 }
+
 
 
 .boton-icono {
@@ -345,4 +399,44 @@ body {
   gap: 40px; 
   width: 100%;
   height: 30px;
+}
+
+.vista-pdf {
+  width: 100%;
+  height: 300px; 
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  pointer-events: none; 
+}
+
+.contenedor-pdf-limpio {
+  width: 100%;
+  height: 300px; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.contenedor-pdf-limpio .react-pdf__Page__canvas {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+}
+
+.texto-cargando {
+  color: #ccd6f6;
+  font-size: 14px;
+}
+
+.video-proyecto {
+  width: auto;
+  height: auto;
+  max-height: 330px; 
+  object-fit: cover; 
+  border-radius: 4px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
