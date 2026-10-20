@@ -448,12 +448,68 @@ body {
   width: 100%;
   gap: 20px;
 }
+/* ==========================================
+   DISEÑO RESPONSIVE / MEDIA QUERIES
+   ========================================== */
 
-@media screen and (max-height > max-width) {
-
-  .contenedor-menu.menu-sticky {
+/* Pantallas medianas (tablets y laptops pequeñas < 1024px) */
+@media screen and (max-width: 1024px) {
+  .div-columnas {
     flex-direction: column;
+    gap: 20px;
+  }
+  
+  .columna-1, .columna-2 {
+    width: 100% !important;
+  }
+
+  .tarjeta-tecnologia-vertical {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Cambiar la sección de experiencia (menu-centro dentro del cuerpo) a columna */
+  .contenedor-cuerpo > .menu-centro {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 15px;
+  }
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVE / MEDIA QUERIES
+   ========================================== */
+
+/* Pantallas medianas (tablets y laptops pequeñas < 1024px) */
+@media screen and (max-width: 1024px) {
+  .div-columnas {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .columna-1, .columna-2 {
+    width: 100% !important;
+  }
+
+  .tarjeta-tecnologia-vertical {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Cambiar la sección de experiencia (menu-centro dentro del cuerpo) a columna */
+  .contenedor-cuerpo > .menu-centro {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 15px;
+  }
+}
+
+/* Pantallas pequeñas (Teléfonos móviles < 768px) */
+@media screen and (max-width: 768px) {
+  /* Menú superior adaptable */
+  .contenedor-menu.menu-sticky {
     padding: 10px 15px;
+    flex-direction: column;
     gap: 10px;
   }
 
@@ -463,7 +519,11 @@ body {
   }
 
   .texto-principal {
-    font-size: 24px; 
+    font-size: 26px; /* Reducir título principal para que quepa en móviles */
+  }
+
+  .texto-nombre {
+    font-size: 16px;
   }
 
   .menu-derecha {
@@ -473,46 +533,51 @@ body {
   }
 
   .menu-centro {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
     gap: 8px;
   }
 
-  .contenedor-cuerpo {
-    padding: 160px 15px 20px 15px; 
-  }
-
-  .secion-destino + .menu-centro,
-  .contenedor-cuerpo > .menu-centro {
-    flex-direction: column !important;
-    width: 100%;
-  }
-
-  .tarjeta-tecnologia-vertical {
-    width: 100% !important; 
-    height: auto !important;
-    min-height: 250px;
-  }
-
-  .div-columnas {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .columna-1, 
-  .columna-2 {
+  /* Los botones del menú ocuparán todo el ancho para facilitar el toque */
+  .menu-centro .botones-principales {
     width: 100% !important;
   }
 
+  /* Ajustar el padding superior del cuerpo para que el menú no tape el contenido */
+  .contenedor-cuerpo {
+    padding: 190px 15px 15px 15px;
+  }
+
+  .seccion-destino {
+    scroll-margin-top: 200px;
+  }
+
+  /* Tarjetas de tecnologías (Acerca de mí y verticales) */
+  .tarjeta-tecnologia {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .texto-secundario {
+    width: 100% !important;
+    font-size: 16px;
+  }
+
+  /* Sección de certificados en una sola columna en móviles */
   .div-columnas-certificado {
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
   }
 
   .columna-certificado {
     width: 100% !important;
   }
 
+  .div-certificado {
+    gap: 20px;
+  }
+
+  /* Botones de contacto más compactos si es necesario */
   .div-contacto {
     gap: 20px;
     height: auto;
@@ -520,12 +585,12 @@ body {
   }
 
   .boton-icono {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
 
   .boton-icono .icono-tech {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
   }
 }
