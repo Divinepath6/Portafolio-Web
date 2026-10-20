@@ -449,7 +449,7 @@ body {
   gap: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-height > max-width) {
 
   .contenedor-menu.menu-sticky {
     flex-direction: column;
