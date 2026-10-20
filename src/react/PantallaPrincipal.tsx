@@ -50,8 +50,11 @@ function PantallaPrincipal(){
         const asunto = encodeURIComponent('Contacto desde tu sitio web');
         const mensaje = encodeURIComponent('Hola Jesús,\n\nMe gustaría ponerme en contacto contigo...');
         window.location.href = `mailto:${email}?subject=${asunto}&body=${mensaje}`;
+        sumarEstadistica("Email")
     }
-
+    const sumarEstadistica = (texto:string = "") =>{
+        console.log(texto)
+    }
     return(
         <>
             <div className="contenedor-menu menu-sticky">
@@ -71,7 +74,12 @@ function PantallaPrincipal(){
 
             <div className='contenedor-cuerpo'>
                 <div className='tarjeta-tecnologia'>
-                    <div className="texto-secundario" style={{justifyContent:"1"}}>
+                    <img 
+                        src="" 
+                        alt="Imagen" 
+                        className="" 
+                    />
+                    <div className="texto-secundario" >
                         <strong>ACERCA DE MÍ</strong><br />
                         Estudiante de ingenería de software con preferencia
                         a la programación backend, experiencia
