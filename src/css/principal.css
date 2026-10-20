@@ -458,35 +458,9 @@ body {
     flex-direction: column;
     gap: 20px;
   }
-  
-  .columna-1, .columna-2 {
-    width: 100% !important;
-  }
-
-  .tarjeta-tecnologia-vertical {
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* Cambiar la sección de experiencia (menu-centro dentro del cuerpo) a columna */
-  .contenedor-cuerpo > .menu-centro {
-    flex-direction: column !important;
-    width: 100%;
-    gap: 15px;
-  }
-}
-
-/* ==========================================
-   DISEÑO RESPONSIVE / MEDIA QUERIES
-   ========================================== */
-
-/* Pantallas medianas (tablets y laptops pequeñas < 1024px) */
-@media screen and (max-width: 1024px) {
-  .div-columnas {
+  .contenedor-tarjetas-experiencia {
     flex-direction: column;
-    gap: 20px;
   }
-  
   .columna-1, .columna-2 {
     width: 100% !important;
   }
@@ -503,6 +477,8 @@ body {
     gap: 15px;
   }
 }
+
+
 
 /* Pantallas pequeñas (Teléfonos móviles < 768px) */
 @media screen and (max-width: 768px) {
@@ -592,5 +568,32 @@ body {
   .boton-icono .icono-tech {
     width: 90px;
     height: 90px;
+  }
+}
+/* ==========================================
+   DISEÑO RESPONSIVE / MEDIA QUERIES
+   ========================================== */
+
+/* Pantallas medianas (tablets y laptops pequeñas < 1024px) */
+@media screen and (max-width: 1024px) {
+  .div-columnas {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .columna-1, .columna-2 {
+    width: 100% !important;
+  }
+
+  .tarjeta-tecnologia-vertical {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Cambiar la sección de experiencia (menu-centro dentro del cuerpo) a columna */
+  .contenedor-cuerpo > .menu-centro {
+    flex-direction: column !important;
+    width: 100%;
+    gap: 15px;
   }
 }
