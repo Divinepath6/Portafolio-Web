@@ -81,7 +81,7 @@ function PantallaPrincipal(){
                     />
                     <div className="texto-secundario" >
                         <strong>ACERCA DE MÍ</strong><br />
-                        Estudiante de ingenería de software con preferencia
+                        <strong>Estudiante de ingenería de software </strong>con preferencia
                         a la programación backend, experiencia
                         academica en la creacion de APIs, manejo de
                         bases de datos, ejecución de pruebas y detección
