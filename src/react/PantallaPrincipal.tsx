@@ -13,7 +13,7 @@ import reactSVG from '../assets/Icons/react.svg'
 import githubSVG from '../assets/Icons/github.svg'
 import odooSVG from'../assets/Icons/odoo.svg'
 import cssSVG from '../assets/Icons/css.svg'
-import mailSVG from '../assets/Icons/mail.svg'
+import mailSVG from '../assets/Icons/mail.svg' 
 import linkedinSVG from '../assets/Icons/linkedin.svg'
 // PFDS
 import administrador_BD_relacionales_PDF from '../assets/files/administrador_de_BD_relacionales.pdf'
@@ -76,8 +76,8 @@ function PantallaPrincipal(){
                 <div className='tarjeta-tecnologia'>
                     <img 
                         src="" 
-                        alt="Imagen" 
                         className="" 
+                        alt="Imagen" 
                     />
                     <div className="texto-secundario" >
                         <strong>ACERCA DE MÍ</strong><br />
