@@ -92,7 +92,7 @@ function PantallaPrincipal(){
                 <div className='separacion-linea ' />
 
                 <section id='seccionExperiencia' className='seccion-destino' />
-                <div className='menu-centro'>
+                <div className='contenedor-tarjetas-experiencia'>
                     <div className='tarjeta-tecnologia-vertical'>
                         <div className="texto-secundario">
                             Backend: Desarrollo de APIs utilizando <strong>C#</strong> usando las siguientes tecnologías: 

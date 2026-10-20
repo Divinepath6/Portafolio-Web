@@ -440,3 +440,92 @@ body {
   margin-bottom: 24px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
+
+.contenedor-tarjetas-experiencia {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .contenedor-menu.menu-sticky {
+    flex-direction: column;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .menu-izquierda {
+    align-items: center;
+    text-align: center;
+  }
+
+  .texto-principal {
+    font-size: 24px; 
+  }
+
+  .menu-derecha {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .menu-centro {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .contenedor-cuerpo {
+    padding: 160px 15px 20px 15px; 
+  }
+
+  .secion-destino + .menu-centro,
+  .contenedor-cuerpo > .menu-centro {
+    flex-direction: column !important;
+    width: 100%;
+  }
+
+  .tarjeta-tecnologia-vertical {
+    width: 100% !important; 
+    height: auto !important;
+    min-height: 250px;
+  }
+
+  .div-columnas {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .columna-1, 
+  .columna-2 {
+    width: 100% !important;
+  }
+
+  .div-columnas-certificado {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .columna-certificado {
+    width: 100% !important;
+  }
+
+  .div-contacto {
+    gap: 20px;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .boton-icono {
+    width: 100px;
+    height: 100px;
+  }
+
+  .boton-icono .icono-tech {
+    width: 60px;
+    height: 60px;
+  }
+}
