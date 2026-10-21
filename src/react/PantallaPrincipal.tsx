@@ -33,6 +33,8 @@ function PantallaPrincipal(){
         window.open(CvDocumento, '_blank', 'noopener,noreferrer');
     }
     const onclickScroll = (id: string) => {
+        console.log(window.innerHeight)
+        console.log(window.innerWidth);
         const elemento = document.getElementById(id);
         if (elemento) {
             elemento.scrollIntoView({
