@@ -372,9 +372,29 @@ body {
 /* ==========================================
    DISEÑO RESPONSIVE / MEDIA QUERIES
    ========================================== */
+.btn-hamburguesa {
+  display: none;
+  background: transparent;
+  border:rgb(126, 151, 236);
+  color: #2e54d1;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+}
 
-/* Laptops y Tablets grandes (ancho menor o igual a 1024px) */
-@media screen and (max-width: 960px) {
+.menu-superior-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+@media screen and (max-width: 980px) {
+  .btn-hamburguesa {
+    display:block;
+  }
   .div-columnas, .div-columnas-certificado {
     flex-direction: column;
     gap: 1.5rem;
@@ -402,33 +422,26 @@ body {
     flex-direction: column;
     gap: 0.8rem;
   }
-
   .menu-izquierda {
     align-items: center;
     text-align: center;
   }
 
-  .menu-derecha {
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-  }
-
   .menu-centro {
-    flex-direction: column;
+    flex-direction: row;
+    flex: 1;
     width: 100%;
     gap: 0.5rem;
   }
-
   .menu-centro .botones-principales {
-    width: 100% !important;
-    text-align: center;
+    width: 50%;
   }
+
+
 
   .contenedor-cuerpo {
-    padding: 12rem 4% 4% 4%; /* Mayor espacio arriba para evitar que el menú colapse con el contenido en móviles */
+    padding: 12rem 4% 4% 4%; 
   }
-
   .seccion-destino {
     scroll-margin-top: 13rem;
   }
@@ -456,4 +469,43 @@ body {
     width: 2.2rem;
     height: 2.2rem;
   }
+  .btn-hamburguesa {
+    display:block;
+  }
+
+
+  .menu-derecha {
+    display: none;
+    flex-direction: auto;
+    flex:auto;
+    width: 90%;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+    margin-top: 10px;
+  }
+
+  .menu-derecha.activo {
+    display: flex;
+  }
+
+  .menu-centro {
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .menu-centro .botones-principales {
+    width: 100% !important;
+    text-align: center;
+  }
+  .contenedor-cuerpo {
+    padding-top: 120px; 
+  }
+
+  .seccion-destino {
+    scroll-margin-top: 130px;
+  }
 }
+

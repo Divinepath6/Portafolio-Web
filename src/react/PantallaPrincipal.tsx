@@ -21,18 +21,25 @@ import administrador_BD_no_relacionales_PDF from '../assets/files/Administrador_
 import programador_C_PDF from '../assets/files/programador_en_C.pdf'
 //recursos
 import proyecto_1_video from '../assets/proyecto_1/Video_placeholder.mp4'
-
-
+import { useState } from 'react'
 
 
 
 
 
 function PantallaPrincipal(){
+    const [menuAbierto, setMenuAbierto] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuAbierto(!menuAbierto);
+    };
+
+
     const onclickDescargarCV = async () => {
         window.open(CvDocumento, '_blank', 'noopener,noreferrer');
     }
     const onclickScroll = (id: string) => {
+        setMenuAbierto(false);
         console.log(window.innerHeight)
         console.log(window.innerWidth);
         const elemento = document.getElementById(id);
@@ -55,23 +62,39 @@ function PantallaPrincipal(){
         sumarEstadistica("Email")
     }
     const sumarEstadistica = (texto:string = "") =>{
+        const caso = 1;
+        switch(caso){
+            case 1:
+                console.log(1)
+            //case 2:
+         ///       console.log(2)
+        }
         console.log(texto)
     }
     return(
         <>
             <div className="contenedor-menu menu-sticky">
-                <div className="menu-izquierda">
-                    <span className="texto-principal">FULL STACK DEVELOPER</span>
-                    <span className="texto-nombre">JESÚS CERVANTES</span>
-                </div>
-                <div className="menu-derecha">
-                    <div className="menu-centro">
-                    <BtnComun onClick={() => onclickScroll('seccionExperiencia')} texto={'Experiencia'} />
-                    <BtnComun onClick={() => onclickScroll('seccionProyectos')} texto={'Proyectos'} />
-                    <BtnComun onClick={() => onclickScroll('seccionContacto')} texto={'Contáctame'} />
+                <div className='menu-superior-mobile'>
+                    <div className="menu-izquierda">
+                        <span className="texto-principal">FULL STACK DEVELOPER</span>
+                        <span className="texto-nombre">JESÚS CERVANTES</span>
                     </div>
-                    <CvIcono onClick={onclickDescargarCV} />
+
+                    <button className="btn-hamburguesa" onClick={toggleMenu} aria-label="Menú">
+                        {menuAbierto ? '✕' : '☰'} 
+                    </button>
                 </div>
+                
+
+                <div className={`menu-derecha ${menuAbierto ? 'activo' : ''}`}>
+                        <div className="menu-centro">
+                        <BtnComun onClick={() => onclickScroll('seccionExperiencia')} texto={'Experiencia'} />
+                        <BtnComun onClick={() => onclickScroll('seccionProyectos')} texto={'Proyectos'} />
+                        <BtnComun onClick={() => onclickScroll('seccionContacto')} texto={'Contáctame'} />
+                        <CvIcono onClick={onclickDescargarCV} />
+                        </div>
+                </div>
+               
             </div>
 
             <div className='contenedor-cuerpo'>
