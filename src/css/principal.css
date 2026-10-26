@@ -3,7 +3,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 :root {
@@ -12,6 +12,7 @@ body {
   --color-boton-sombra: #260457; 
   --color-separacion-linea: rgba(74, 2, 141, 0.874);
   --color-menu: rgb(29, 40, 109);
+  --color-sombra-tarjetas: rgba(57, 5, 110, 0.297); 
 }
 
 @font-face {
@@ -182,7 +183,7 @@ body {
 
 .tarjeta-tecnologia {
   background-color: var(--color-tarjetas);
-  border: 1px solid rgba(43, 8, 74, 0.26); 
+  border: 1px solid var(--color-sombra-tarjetas);
   border-radius: 5%;  
   padding: 1.4rem; 
   width: 100%;
@@ -197,20 +198,19 @@ body {
 
 .tarjeta-tecnologia-contacto {
   background-color: var(--color-tarjetas);
-  border: 1px solid rgba(43, 8, 74, 0.26); 
+  border: 1px solid var(--color-sombra-tarjetas);
   border-radius: 5%; 
-  padding: .8rem; 
+  padding: 1rem; 
   box-sizing: border-box;
-  height:fit-content;
-  min-height: 7.3rem;
-  max-height: 8.1rem;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: .7rem;
   text-align: justify;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 16px rgba(78, 0, 138, 0.3);
+  flex: 1; 
 }
 
 .contenedor-tarjetas-experiencia {
@@ -223,7 +223,7 @@ body {
 
 .tarjeta-tecnologia-vertical {
   background-color: var(--color-tarjetas);
-  border: 1px solid rgba(43, 8, 74, 0.26); 
+  border: 1px solid var(--color-sombra-tarjetas);
   border-radius: 5%; 
   padding: 1.5rem; 
   width: 32%; 
@@ -280,7 +280,7 @@ body {
 
 .foto {
   width: 10%;
-  height: 10%; /* Altura controlada para que todas las tarjetas guarden armonía */
+  height: 10%; 
   object-fit:contain;
   border-radius: 10%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -323,6 +323,7 @@ body {
   gap: 1.5rem; 
   width: 100%;
   height: 100%;
+  align-items: stretch;
 }
 
 .columna-certificado {
@@ -373,8 +374,11 @@ body {
 }
 
 .vista-pdf, .contenedor-pdf-limpio {
-  width: 15rem;
-  height:  15rem; 
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 14rem;
+  max-height: 20rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -382,11 +386,17 @@ body {
   border-radius: 4px;
 }
 
-.contenedor-pdf-limpio .react-pdf__Page__canvas {
+.contenedor-pdf-limpio .react-pdf__Page__canvas,
+.vista-pdf canvas,
+.vista-pdf img {
   width: 100% !important;
   height: auto !important;
-  object-fit: cover;
+  max-height: 100% !important;
+  object-fit: contain !important;
 }
+
+
+
 
 .texto-cargando {
   color: #ccd6f6;
@@ -415,8 +425,16 @@ body {
 
 
 
+
+
 @media screen and (max-width: 980px) {
-   
+    .div-columnas-certificado {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .columna-certificado {
+    width: 100% !important;
+  }
   .div-columnas{
     flex-direction: column;
     gap: 1.5rem;
