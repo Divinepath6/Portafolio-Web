@@ -11,9 +11,9 @@ import sqlSVG from '../assets/Icons/sql.svg'
 import typescriptSVG from '../assets/Icons/typescript.svg'
 import reactSVG from '../assets/Icons/react.svg'
 import githubSVG from '../assets/Icons/github.svg'
-import odooSVG from'../assets/Icons/odoo.svg'
+import odooSVG from '../assets/Icons/odoo.svg'
 import cssSVG from '../assets/Icons/css.svg'
-import mailSVG from '../assets/Icons/mail.svg' 
+import mailSVG from '../assets/Icons/mail.svg'
 import linkedinSVG from '../assets/Icons/linkedin.svg'
 // PFDS
 import administrador_BD_relacionales_PDF from '../assets/files/administrador_de_BD_relacionales.pdf'
@@ -21,13 +21,14 @@ import administrador_BD_no_relacionales_PDF from '../assets/files/Administrador_
 import programador_C_PDF from '../assets/files/programador_en_C.pdf'
 //recursos
 import proyecto_1_video from '../assets/proyecto_1/Video_placeholder.mp4'
+import Foto from '../assets/files/Foto.png'
 import { useState } from 'react'
 
 
 
 
 
-function PantallaPrincipal(){
+function PantallaPrincipal() {
     const [menuAbierto, setMenuAbierto] = useState(false);
 
     const toggleMenu = () => {
@@ -45,72 +46,77 @@ function PantallaPrincipal(){
         const elemento = document.getElementById(id);
         if (elemento) {
             elemento.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+                behavior: 'smooth',
+                block: 'start'
             });
         }
     };
 
-    const onClickAbrirEnlace = (URL:string = "") => {
+    const onClickAbrirEnlace = (URL: string = "") => {
         window.open(URL)
     }
     const onClickEmail = () => {
-        const email = 'jesus_cermalopez@outlook.com'; 
+        const email = 'jesus_cermalopez@outlook.com';
         const asunto = encodeURIComponent('Contacto desde tu sitio web');
         const mensaje = encodeURIComponent('Hola Jesús,\n\nMe gustaría ponerme en contacto contigo...');
         window.location.href = `mailto:${email}?subject=${asunto}&body=${mensaje}`;
         sumarEstadistica("Email")
     }
-    const sumarEstadistica = (texto:string = "") =>{
+    const sumarEstadistica = (texto: string = "") => {
         const caso = 1;
-        switch(caso){
+        switch (caso) {
             case 1:
                 console.log(1)
             //case 2:
-         ///       console.log(2)
+            ///       console.log(2)
         }
         console.log(texto)
     }
-    return(
+    return (
         <>
             <div className="contenedor-menu menu-sticky">
                 <div className='menu-superior-mobile'>
                     <div className="menu-izquierda">
-                        <span className="texto-principal">FULL STACK DEVELOPER</span>
+                        <span className="texto-principal"> BACKEND DEVELOPER </span>
                         <span className="texto-nombre">JESÚS CERVANTES</span>
                     </div>
 
                     <button className="btn-hamburguesa" onClick={toggleMenu} aria-label="Menú">
-                        {menuAbierto ? '✕' : '☰'} 
+                        {menuAbierto ? '✕' : '☰'}
                     </button>
                 </div>
-                
+
 
                 <div className={`menu-derecha ${menuAbierto ? 'activo' : ''}`}>
-                        <div className="menu-centro">
+                    <div className="menu-centro">
                         <BtnComun onClick={() => onclickScroll('seccionExperiencia')} texto={'Experiencia'} />
                         <BtnComun onClick={() => onclickScroll('seccionProyectos')} texto={'Proyectos'} />
-                        <BtnComun onClick={() => onclickScroll('seccionContacto')} texto={'Contáctame'} />
-                        <CvIcono onClick={onclickDescargarCV} />
+                        <div className='div-boton-contactame'>
+                            <BtnComun onClick={() => onclickScroll('seccionContacto')} texto={'Contáctame'} />
                         </div>
+
+                        <CvIcono onClick={onclickDescargarCV} />
+                    </div>
                 </div>
-               
+
             </div>
 
             <div className='contenedor-cuerpo'>
                 <div className='tarjeta-tecnologia'>
-                    <img 
-                        src="" 
-                        className="" 
-                        alt="Imagen" 
+                    <img
+                        src={Foto}
+                        className="foto"
+                        alt="Imagen"
                     />
                     <div className="texto-secundario" >
-                        <strong>ACERCA DE MÍ</strong><br />
-                        <strong>Estudiante de ingenería de software </strong>con preferencia
-                        a la programación backend, experiencia
-                        academica en la creacion de APIs, manejo de
-                        bases de datos, ejecución de pruebas y detección
-                        de errores
+                        <b>Hola, Soy Jesus </b><br />
+                        Soy<b> Estudiante de Ingenería de Software </b>
+                        me gusta el Backend Developer
+                        aunque soy un entusiasta por la programación Full Stack,
+                        tengo experiencia academica y práctica en la creacion de APIs,
+                        diseño y manejo eficiente bases de datos, así como,
+                        control de calidad mediante pruebas,
+                        enfocado en construir software con alta confianza.
                     </div>
                 </div>
 
@@ -120,7 +126,7 @@ function PantallaPrincipal(){
                 <div className='contenedor-tarjetas-experiencia'>
                     <div className='tarjeta-tecnologia-vertical'>
                         <div className="texto-secundario">
-                            Backend: Desarrollo de APIs utilizando <strong>C#</strong> usando las siguientes tecnologías: 
+                            Backend: Desarrollo de APIs utilizando <strong>C#</strong> usando las siguientes tecnologías:
                             .Net, ASP.NET Core Web APIs con implementación de conexiones y consultas a SQL Server.
                         </div>
                         <div className="contenido-logos">
@@ -130,8 +136,8 @@ function PantallaPrincipal(){
                     </div>
                     <div className='tarjeta-tecnologia-vertical'>
                         <div className="texto-secundario">
-                            He hecho de FULL STACK usando el framework de Odoo usando tanto <strong>python</strong> como <strong>XML</strong>. 
-                            Además de implementar Control de versiones con GitHub.       
+                            He hecho de FULL STACK usando el framework de Odoo usando tanto <strong>python</strong> como <strong>XML</strong>.
+                            Además de implementar Control de versiones con GitHub.
                         </div>
                         <div className="contenido-logos">
                             <img src={pythonSVG} alt="Python" className="icono-tech" title="Python" />
@@ -141,7 +147,7 @@ function PantallaPrincipal(){
                     </div>
                     <div className='tarjeta-tecnologia-vertical'>
                         <div className="texto-secundario">
-                            Frontend: Experiencia usando <strong>TypeScript</strong> en el diseño de páginas web usando la librería React. 
+                            Frontend: Experiencia usando <strong>TypeScript</strong> en el diseño de páginas web usando la librería React.
                         </div>
                         <div className="contenido-logos">
                             <img src={typescriptSVG} alt="TypeScript" className="icono-tech" title="TypeScript" />
@@ -151,33 +157,82 @@ function PantallaPrincipal(){
                     </div>
                 </div>
 
-
                 <div className='separacion-linea' />
 
+                <section id='seccionContacto' className='seccion-destino' />
+
+                <div className='div-columnas-certificado'>
+                    <div className="columna-certificado">
+                        <div className='div-certificado'>
+                            <div className='tarjeta-tecnologia-contacto '>
+                                <BtnIcono onClick={
+                                    () => { onClickAbrirEnlace('https://github.com/Divinepath6') }}
+                                    icono={githubSVG} alt='Github' />
+                                <div className="texto-secundario">
+                                    Mi Github donde esta más a fondo los proyectos en lo que he participado
+                                </div>
+                            </div>
+                            <div className='tarjeta-tecnologia-contacto' >
+                                <BtnIcono onClick={
+                                    () => { onClickEmail() }}
+                                    icono={mailSVG} alt='EMAIL' />
+                                <div className="texto-secundario">
+                                    Enviame un correo, si quieres contactarme
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="columna-certificado">
+                        <div className='tarjeta-tecnologia-contacto '>
+                            <BtnIcono onClick={
+                                () => { onClickAbrirEnlace('https://www.linkedin.com/in/jes%C3%BAs-cervantes-l%C3%B3pez-15b034330/') }}
+                                icono={linkedinSVG} alt='Linkedin' />
+                            <div className="texto-secundario">
+                                Mi perfil de Linkedin
+                            </div>
+                        </div>
+                        <div className='tarjeta-tecnologia-contacto '>
+                            <div className="texto-nombre">
+                                +(52)<br/>
+                                668-275-2581
+                            </div>
+                            <div className="texto-secundario">
+                                Mi telefono de contacto, abierto para Whatsapp
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div className='separacion-linea' />
                 <section id='seccionProyectos' className='seccion-destino' />
 
                 <div className='div-columnas'>
                     <div className="columna-1">
                         <div className="tarjeta-proyecto" >
-                            <video 
+                            <video
                                 className="video-proyecto"
-                                autoPlay 
-                                loop 
-                                muted 
+                                autoPlay
+                                loop
+                                muted
                                 playsInline
                             >
                                 <source src={proyecto_1_video} type="video/mp4" />
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                             <div className="texto-secundario">
-                            Modulo desarrollado en el framework de  <strong> Odoo </strong> 
-                            con el proposito de realizar cotizaciones y de logística de cotizaciones 
-                            para la compañia Rack Industries 
+                                Modulo desarrollado en el framework de  <strong> Odoo </strong>
+                                con el proposito de realizar cotizaciones y de logística de cotizaciones
+                                para la compañia Rack Industries
                             </div>
-                            <BtnComun onClick = {
-                            () =>{onClickAbrirEnlace("https://github.com/Divinepath6/Log-stica")}} 
-                            texto={'Ver más del proyecto'} 
-                            title='Ver Codigo'
+                            <BtnComun onClick={
+                                () => { onClickAbrirEnlace("https://github.com/Divinepath6/Log-stica") }}
+                                texto={'Ver más del proyecto'}
+                                title='Ver Codigo'
                             />
                         </div>
                     </div>
@@ -185,27 +240,27 @@ function PantallaPrincipal(){
                     <div className="columna-2">
                         <div className='div-filas'>
                             <div className="tarjeta-proyecto">
-                                <img 
-                                src="ruta-de-tu-imagen.jpg" 
-                                alt="Proyecto" 
-                                className="imagen-proyecto" 
+                                <img
+                                    src="ruta-de-tu-imagen.jpg"
+                                    alt="Proyecto"
+                                    className="imagen-proyecto"
                                 />
-                                <BtnComun onClick = {
-                                () =>{onClickAbrirEnlace('https://github.com/Divinepath6')}} 
-                                texto={'Ver más'} 
-                                title='Ver Codigo'
+                                <BtnComun onClick={
+                                    () => { onClickAbrirEnlace('https://github.com/Divinepath6') }}
+                                    texto={'Ver más'}
+                                    title='Ver Codigo'
                                 />
                             </div>
                             <div className="tarjeta-proyecto">
-                                <img 
-                                src="ruta-de-tu-imagen.jpg" 
-                                alt="Proyecto" 
-                                className="imagen-proyecto" 
+                                <img
+                                    src="ruta-de-tu-imagen.jpg"
+                                    alt="Proyecto"
+                                    className="imagen-proyecto"
                                 />
-                                <BtnComun onClick = {
-                                () =>{onClickAbrirEnlace('https://github.com/Divinepath6')}} 
-                                texto={'Ver más'} 
-                                title='Ver Codigo'
+                                <BtnComun onClick={
+                                    () => { onClickAbrirEnlace('https://github.com/Divinepath6') }}
+                                    texto={'Ver más'}
+                                    title='Ver Codigo'
                                 />
                             </div>
                         </div>
@@ -215,23 +270,23 @@ function PantallaPrincipal(){
 
 
 
-                <div className='separacion-linea '/>
+                <div className='separacion-linea ' />
 
                 <div className='div-columnas-certificado'>
                     <div className="columna-certificado">
-                    <div className='div-certificado'>
-                        <div className="tarjeta-proyecto" >
-                            <img 
-                                src="ruta-de-tu-imagen.jpg" 
-                                alt="Certificado" 
-                                className="imagen-proyecto" 
-                            />
+                        <div className='div-certificado'>
+                            <div className="tarjeta-proyecto" >
+                                <img
+                                    src="ruta-de-tu-imagen.jpg"
+                                    alt="Certificado"
+                                    className="imagen-proyecto"
+                                />
+                            </div>
+                            <div className="tarjeta-proyecto" >
+                                <PDFVisor archivoPdf={programador_C_PDF} ></PDFVisor>
+                            </div>
+
                         </div>
-                        <div className="tarjeta-proyecto" >
-                            <PDFVisor archivoPdf={programador_C_PDF} ></PDFVisor>
-                        </div>
-                           
-                    </div>
                     </div>
 
                     <div className="columna-certificado">
@@ -246,22 +301,10 @@ function PantallaPrincipal(){
                     </div>
 
                 </div>
-            
+
             </div>
-            
-            <div className='separacion-linea' />
-            <section id='seccionContacto' className='seccion-destino' />
-            <div className='div-contacto '>
-                <BtnIcono onClick={
-                    () => {onClickAbrirEnlace('https://github.com/Divinepath6')}} 
-                icono={githubSVG} alt='Github'/>
-                <BtnIcono onClick={
-                    () => {onClickEmail()}} 
-                    icono={mailSVG} alt='EMAIL'/>
-                <BtnIcono onClick={
-                    () => {onClickAbrirEnlace('https://www.linkedin.com/in/jes%C3%BAs-cervantes-l%C3%B3pez-15b034330/')}} 
-                    icono={linkedinSVG} alt='Linkedin'/>
-            </div>
+
+
 
         </>
     )

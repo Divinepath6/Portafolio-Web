@@ -23,7 +23,7 @@ body {
 
 .texto-principal {
   font-family: 'Montserrat';
-  font-size: clamp(1.2rem, 2vw, 1.8rem); /* Escala de forma fluida según la pantalla */
+  font-size: clamp(1.2rem, 2vw, 1.8rem); 
   color: #fff;
   text-align: center;
   text-shadow: 
@@ -111,7 +111,7 @@ body {
   height: 4px;
   background-color: var(--color-separacion-linea);
   width: 95%;
-  margin: 2% auto;
+  margin-top: 2%;
   border-radius: 2px;
 }
 
@@ -168,8 +168,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 1.5rem;
-  padding: 7rem 3% 3% 3%; /* Espacio superior fluido para que el menú sticky no tape el contenido */
+  gap: 1.3rem;
+  padding: 6.5rem 3% 3% 3%; /* Espacio superior fluido para que el menú sticky no tape el contenido */
   box-sizing: border-box;
 }
 
@@ -183,14 +183,32 @@ body {
 .tarjeta-tecnologia {
   background-color: var(--color-tarjetas);
   border: 1px solid rgba(43, 8, 74, 0.26); 
-  border-radius: 6px; 
-  padding: 2rem; 
+  border-radius: 5%;  
+  padding: 1.4rem; 
   width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 1.8rem;
+  text-align: justify;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-tecnologia-contacto {
+  background-color: var(--color-tarjetas);
+  border: 1px solid rgba(43, 8, 74, 0.26); 
+  border-radius: 5%; 
+  padding: .8rem; 
+  box-sizing: border-box;
+  height:fit-content;
+  min-height: 7.3rem;
+  max-height: 8.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: .7rem;
   text-align: justify;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
@@ -206,11 +224,10 @@ body {
 .tarjeta-tecnologia-vertical {
   background-color: var(--color-tarjetas);
   border: 1px solid rgba(43, 8, 74, 0.26); 
-  border-radius: 6px; 
+  border-radius: 5%; 
   padding: 1.5rem; 
-  width: 32%; /* Se distribuyen perfectamente en 3 columnas iguales */
+  width: 32%; 
   box-sizing: border-box;
-  min-height: 280px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -230,9 +247,9 @@ body {
 }
 
 .icono-tech {
-  width: 2.3rem;
-  height: 2.3rem;
-  padding: 4px; 
+  width: 2.1rem;
+  height: 2.1rem;
+  padding:  0.2rem; 
   object-fit: contain;
   filter: invert(100%);
   transition: transform 0.2s ease, filter 0.2s ease;
@@ -254,13 +271,20 @@ body {
 }
 
 .imagen-proyecto, .video-proyecto {
-  width: 100%;
-  height: 200px; /* Altura controlada para que todas las tarjetas guarden armonía */
+  width: 90%;
+  height: 70%; /* Altura controlada para que todas las tarjetas guarden armonía */
   object-fit: cover; 
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
+.foto {
+  width: 10%;
+  height: 10%; /* Altura controlada para que todas las tarjetas guarden armonía */
+  object-fit:contain;
+  border-radius: 10%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 .div-columnas {
   display: flex;
   flex-direction: row;
@@ -349,8 +373,8 @@ body {
 }
 
 .vista-pdf, .contenedor-pdf-limpio {
-  width: 100%;
-  height: 200px; 
+  width: 15rem;
+  height:  15rem; 
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -392,14 +416,14 @@ body {
 
 
 @media screen and (max-width: 980px) {
-  .btn-hamburguesa {
-    display:block;
-  }
-  .div-columnas, .div-columnas-certificado {
+   
+  .div-columnas{
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+  .tarjeta-tecnologia{
+    flex-direction: row;
+  }
   .columna-1, .columna-2, .columna-certificado {
     width: 100% !important;
   }
@@ -438,16 +462,16 @@ body {
   }
 
 
-
   .contenedor-cuerpo {
     padding: 12rem 4% 4% 4%; 
+    width: 95%;
   }
   .seccion-destino {
     scroll-margin-top: 13rem;
   }
 
   .tarjeta-tecnologia {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     padding: 1.2rem;
   }
