@@ -1,7 +1,9 @@
 import '../css/principal.css'
+import { useEffect, useState } from 'react'
+
 import CvIcono from '../components/BtnCv'
 import BtnComun from '../components/BtnComun'
-import CvDocumento from '../assets/files/CV.pdf'
+
 import BtnIcono from '../components/BtnIcono'
 import PDFVisor from '../components/PdfVisor'
 //SVG
@@ -22,14 +24,29 @@ import programador_C_PDF from '../assets/files/programador_en_C.pdf'
 //recursos
 import proyecto_1_video from '../assets/proyecto_1/Video_placeholder.mp4'
 import Foto from '../assets/files/Foto.png'
-import { useState } from 'react'
 
+import CvDocumento from '../assets/files/CV.pdf'
 
 
 
 
 function PantallaPrincipal() {
     const [menuAbierto, setMenuAbierto] = useState(false);
+    const [mostrarInfoMenu, setMostrarInfoMenu] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > window.innerHeight - 100) {
+                setMostrarInfoMenu(true);
+            } else {
+                setMostrarInfoMenu(false);
+                setMenuAbierto(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setMenuAbierto(!menuAbierto);
@@ -75,9 +92,9 @@ function PantallaPrincipal() {
     return (
         <>
             <div className="contenedor-menu menu-sticky">
-                <div className='menu-superior-mobile'>
+               <div className={`menu-superior-mobile ${mostrarInfoMenu ? 'visible' : ''}`}>
                     <div className="menu-izquierda">
-                        <span className="texto-principal"> BACKEND DEVELOPER </span>
+                        <span className="texto-principal"> BACKEND ENGINEER </span>
                         <span className="texto-nombre">JESÚS CERVANTES</span>
                     </div>
 
@@ -101,28 +118,39 @@ function PantallaPrincipal() {
 
             </div>
 
+            <div className='tarjeta-intro'>
+                <span className="texto-intro-pequeño">Hola, mi nombre es: </span>
+                <span className="texto-intro-grande"> JESÚS CERVANTES </span>
+                <span className="texto-intro-pequeño"> Y Soy </span>
+                 <span className="texto-intro-grande"> BACKEND ENGINEER  </span>
+                <span className="texto-intro-pequeño"> Y creo herramientas </span>
+            </div>
+
             <div className='contenedor-cuerpo'>
-                <div className='tarjeta-tecnologia'>
+                <div className='separacion-linea ' />
+                <span className="texto-nombre">About Me </span>
+                <div className='tarjeta-tecnologia-sobre-mi'>
                     <img
                         src={Foto}
                         className="foto"
                         alt="Imagen"
                     />
                     <div className="texto-secundario" >
-                        <b>Hola, Soy Jesus </b><br />
-                        Soy<b> Estudiante de Ingenería de Software </b>
+                        Hola, yo soy  <span className="texto-resaltar"> Jesus </span><br />
+                        <span className="texto-resaltar"> Estudiante de Ingenería de Software, </span>
                         me gusta el Backend Developer
-                        aunque soy un entusiasta por la programación Full Stack,
+                        aunque tambien un entusiasta por la programación Full Stack,
                         tengo experiencia academica y práctica en la creacion de APIs,
                         diseño y manejo eficiente bases de datos, así como,
                         control de calidad mediante pruebas,
-                        enfocado en construir software con alta confianza.
+                        con el objetivo en construir software con alta confianza.
                     </div>
                 </div>
 
                 <div className='separacion-linea ' />
 
                 <section id='seccionExperiencia' className='seccion-destino' />
+                <span className="texto-nombre"> The things that i know </span>
                 <div className='contenedor-tarjetas-experiencia'>
                     <div className='tarjeta-tecnologia-vertical'>
                         <div className="texto-secundario">
@@ -158,8 +186,9 @@ function PantallaPrincipal() {
                 </div>
 
                 <div className='separacion-linea' />
-
+                
                 <section id='seccionContacto' className='seccion-destino' />
+                <span className="texto-nombre">Me on the web </span>
 
                 <div className='div-columnas-certificado'>
                     <div className="columna-certificado">
@@ -226,8 +255,9 @@ function PantallaPrincipal() {
                             </video>
                             <div className="texto-secundario">
                                 Modulo desarrollado en el framework de  <strong> Odoo </strong>
-                                con el proposito de realizar cotizaciones y de logística de cotizaciones
-                                para la compañia Rack Industries
+                                con el una herramienta capas de realizar cotizaciones y 
+                                una apoyo de logística de operaciones  
+                                para la compañia Rack Industries.
                             </div>
                             <BtnComun onClick={
                                 () => { onClickAbrirEnlace("https://github.com/Divinepath6/Log-stica") }}
