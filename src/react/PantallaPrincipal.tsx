@@ -120,7 +120,7 @@ function PantallaPrincipal() {
 
             <div className='tarjeta-intro'>
                 <span className="texto-intro-pequeño">Hola, mi nombre es: </span>
-                <h1 className="texto-intro-grande"> JESÚS CERVANTES </h1>
+                <span className="texto-intro-grande"> JESÚS CERVANTES </span>
                 <span className="texto-intro-pequeño"> Y Soy </span>
                  <h1 className="texto-intro-grande"> BACKEND ENGINEER  </h1>
                 <span className="texto-intro-pequeño"> Y creo herramientas </span>
@@ -155,20 +155,20 @@ function PantallaPrincipal() {
                 <h2 className="texto-nombre"> The things that i know </h2>
                 <div className='contenedor-tarjetas-experiencia'>
                     <div className='tarjeta-tecnologia-vertical'>
-                        <div className="texto-secundario">
+                        <h3 className="texto-secundario">
                             Backend: Desarrollo de APIs utilizando <strong>C#</strong> usando las siguientes tecnologías:
                             .Net, ASP.NET Core Web APIs con implementación de conexiones y consultas a SQL Server.
-                        </div>
+                        </h3>
                         <div className="contenido-logos">
                             <img src={dotnetSVG} alt=".NET" className="icono-tech" title=".NET" />
                             <img src={sqlSVG} alt="SQL Server" className="icono-tech" title="SQL Server" />
                         </div>
                     </div>
                     <div className='tarjeta-tecnologia-vertical'>
-                        <div className="texto-secundario">
+                        <h3 className="texto-secundario">
                             He hecho de FULL STACK usando el framework de Odoo usando tanto <strong>python</strong> como <strong>XML</strong>.
                             Además de implementar Control de versiones con GitHub.
-                        </div>
+                        </h3>
                         <div className="contenido-logos">
                             <img src={pythonSVG} alt="Python" className="icono-tech" title="Python" />
                             <img src={odooSVG} alt="Odoo" className="icono-tech" title="Odoo" />
@@ -176,9 +176,9 @@ function PantallaPrincipal() {
                         </div>
                     </div>
                     <div className='tarjeta-tecnologia-vertical'>
-                        <div className="texto-secundario">
+                        <h3 className="texto-secundario">
                             Frontend: Experiencia usando <strong>TypeScript</strong> en el diseño de páginas web usando la librería React.
-                        </div>
+                        </h3>
                         <div className="contenido-logos">
                             <img src={typescriptSVG} alt="TypeScript" className="icono-tech" title="TypeScript" />
                             <img src={reactSVG} alt="React" className="icono-tech" title="React" />
