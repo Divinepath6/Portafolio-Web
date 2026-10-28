@@ -303,6 +303,7 @@ function PantallaPrincipal() {
 
 
                 <div className='separacion-linea ' />
+                <h2 className="texto-nombre"> The things that i learn </h2>
 
                 <div className='div-columnas-certificado'>
                     <div className="columna-certificado">
