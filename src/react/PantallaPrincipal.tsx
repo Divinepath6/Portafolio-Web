@@ -120,15 +120,15 @@ function PantallaPrincipal() {
 
             <div className='tarjeta-intro'>
                 <span className="texto-intro-pequeño">Hola, mi nombre es: </span>
-                <span className="texto-intro-grande"> JESÚS CERVANTES </span>
+                <h1 className="texto-intro-grande"> JESÚS CERVANTES </h1>
                 <span className="texto-intro-pequeño"> Y Soy </span>
-                 <span className="texto-intro-grande"> BACKEND ENGINEER  </span>
+                 <h1 className="texto-intro-grande"> BACKEND ENGINEER  </h1>
                 <span className="texto-intro-pequeño"> Y creo herramientas </span>
             </div>
 
             <div className='contenedor-cuerpo'>
                 <div className='separacion-linea ' />
-                <span className="texto-nombre">About Me</span>
+                <h2 className="texto-nombre">About Me</h2>
                 <div className='tarjeta-tecnologia-sobre-mi'>
                     <img
                         src={Foto}
@@ -144,13 +144,15 @@ function PantallaPrincipal() {
                         diseño y manejo eficiente bases de datos, así como,
                         control de calidad mediante pruebas,
                         con el objetivo en construir software con alta confianza.
-                    </div>
+                    {/* AQUÍ AGREGAS EL CÓDIGO DEL ENLACE INTERNO */}
+                    <br />
+                    Puedes revisar directamente mis <a href="#seccionProyectos" onClick={(e) => {e.preventDefault(); onclickScroll('seccionProyectos');}} style={{ color: '#217cec', textDecoration: 'underline' }}>proyectos destacados</a> aquí.</div>
                 </div>
 
                 <div className='separacion-linea ' />
 
                 <section id='seccionExperiencia' className='seccion-destino' />
-                <span className="texto-nombre"> The things that i know </span>
+                <h2 className="texto-nombre"> The things that i know </h2>
                 <div className='contenedor-tarjetas-experiencia'>
                     <div className='tarjeta-tecnologia-vertical'>
                         <div className="texto-secundario">
@@ -188,7 +190,7 @@ function PantallaPrincipal() {
                 <div className='separacion-linea' />
                 
                 <section id='seccionContacto' className='seccion-destino' />
-                <span className="texto-nombre">Me on the web </span>
+                <h2 className="texto-nombre">Me on the web </h2>
 
                 <div className='div-columnas-certificado'>
                     <div className="columna-certificado">
@@ -239,7 +241,7 @@ function PantallaPrincipal() {
 
                 <div className='separacion-linea' />
                 <section id='seccionProyectos' className='seccion-destino' />
-
+                <h2 className="texto-nombre">The things that i made </h2>               
                 <div className='div-columnas'>
                     <div className="columna-1">
                         <div className="tarjeta-proyecto" >

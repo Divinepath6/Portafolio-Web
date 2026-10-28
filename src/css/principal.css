@@ -21,10 +21,12 @@ body {
   font-weight: normal;
   font-style: normal;
 }
-.texto-intro-grande,
-.texto-principal {
+
+.texto-principal{
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.2rem, 2vw, 1.8rem); 
   color: #fff;
+  font-weight: normal;
   text-align: center;
   text-shadow: 
     0 0 5px #cad6fdc4, 
@@ -36,9 +38,27 @@ body {
 .texto-intro-grande{
  font-size: clamp( 3rem, 5vw, 4.5rem); 
  text-align: left;
+   font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  margin: 0; /* Limpiamos los márgenes por defecto del h1 */
+  font-weight: normal;
+  text-align: center;
+  text-shadow: 
+    0 0 5px #cad6fdc4, 
+    0 0 10px #b6c6f992, 
+    0 0 20px #ccd6f6a0, 
+    0 0 30px #e1e8ff91;
 }
-.texto-intro-pequeño,
+.texto-intro-pequeño{
+  font-family: 'Montserrat', sans-serif;
+  color: #bccdff;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-weight: 500;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
 .texto-nombre {
+  font-family: 'Montserrat', sans-serif;
   color: #bccdff;
   font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   font-weight: 500;
