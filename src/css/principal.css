@@ -137,6 +137,8 @@ body {
   gap: .8rem;
   width: 100%;
   height: fit-content;
+  background: transparent; 
+  background-color:  transparent; 
 }
 
 .contenedor-menu.menu-sticky {
@@ -150,9 +152,8 @@ body {
   align-items: center;
   padding: 1% 3%;
   box-sizing: border-box;
-  background: var(--color-menu); 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: transparent;  
+  background-color:  transparent; 
   z-index: 1000;
 }
 
@@ -320,7 +321,6 @@ body {
   gap: 2%; 
   width: 100%;
 }
-
 .columna-1 {
   width: 68%; /* Proporción equilibrada con respecto a la columna 2 */
   display: flex;
@@ -450,7 +450,13 @@ body {
 
 .menu-superior-mobile.visible {
   display: flex !important; 
+  
 }
+  .contenedor-menu.visible{
+    background: var(--color-menu);
+    background-color:  var(--color-menu); 
+}
+
 .tarjeta-intro{
   width: 100vw;      
   position: relative;
@@ -471,7 +477,7 @@ body {
   background: var(--color-menu); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(99, 102, 241, 0.25);
+  border-bottom: 2% solid rgba(59, 1, 140, 0.607);
   
   gap: 1.5rem;
   padding: 6.5rem 3% 3% 3%;
@@ -496,7 +502,7 @@ body {
   .texto-intro-pequeño{
     font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   }
-    .menu-derecha {
+  .menu-derecha {
     flex-direction: center;
     align-items:center;
     align-self: center;
@@ -539,6 +545,11 @@ body {
     width: 100% !important;
     height: auto !important;
   }
+    .tarjeta-tecnologia-sobre-mi{
+      padding: 0;
+      gap:0;
+      width: 100%;
+  }
 }
 
 /* Celulares y tablets pequeñas (ancho menor o igual a 768px) */
@@ -547,14 +558,13 @@ body {
     flex-direction: column-reverse;
     height:max-content;
   }
-  .menu-superior-mobile {
-    display: flex !important; 
-  }
+
   .contenedor-menu.menu-sticky {
     padding: 3% 4%;
     flex-direction: column;
     gap: 0.8rem;
   }
+
   .menu-izquierda {
     align-items: center;
     text-align: center;

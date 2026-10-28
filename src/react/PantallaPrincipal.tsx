@@ -91,7 +91,7 @@ function PantallaPrincipal() {
     }
     return (
         <>
-            <div className="contenedor-menu menu-sticky">
+            <div className= {`contenedor-menu menu-sticky ${mostrarInfoMenu ? 'visible' : ''}`}>
                <div className={`menu-superior-mobile ${mostrarInfoMenu ? 'visible' : ''}`}>
                     <div className="menu-izquierda">
                         <span className="texto-principal"> BACKEND ENGINEER </span>
@@ -128,7 +128,7 @@ function PantallaPrincipal() {
 
             <div className='contenedor-cuerpo'>
                 <div className='separacion-linea ' />
-                <span className="texto-nombre">About Me </span>
+                <span className="texto-nombre">About Me</span>
                 <div className='tarjeta-tecnologia-sobre-mi'>
                     <img
                         src={Foto}
