@@ -200,13 +200,13 @@ body {
 
 .contenedor-cuerpo {
   width: 100%;
-  max-width: 1300px; /* Evita que se estire demasiado en pantallas 4K o ultra-anchas */
+  max-width: 1300px; 
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 1.3rem;
-  padding: 6.5rem 3% 3% 3%; /* Espacio superior fluido para que el menú sticky no tape el contenido */
+  padding: 5.6rem 3% 3% 3%;
   box-sizing: border-box;
 }
 .seccion-destino {
@@ -570,6 +570,10 @@ body {
       gap:0;
       width: 100%;
   }
+  .contenedor-cuerpo {
+    padding: 4rem 4% 4% 4%; 
+    width: 95%;
+  }
 }
 
 /* Celulares y tablets pequeñas (ancho menor o igual a 768px) */
@@ -602,7 +606,7 @@ body {
 
 
   .contenedor-cuerpo {
-    padding: 12rem 4% 4% 4%; 
+    padding: 4rem 4% 4% 4%; 
     width: 95%;
   }
   .seccion-destino {
@@ -664,7 +668,7 @@ body {
     text-align: center;
   }
   .contenedor-cuerpo {
-    padding-top: 120px; 
+    padding-top: 3rem; 
   }
 
   .seccion-destino {

@@ -36,7 +36,7 @@ function PantallaPrincipal() {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > window.innerHeight - 100) {
+            if (window.scrollY > window.innerHeight - 110) {
                 setMostrarInfoMenu(true);
             } else {
                 setMostrarInfoMenu(false);
