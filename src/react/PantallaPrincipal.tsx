@@ -52,14 +52,12 @@ function PantallaPrincipal() {
         setMenuAbierto(!menuAbierto);
     };
 
-
     const onclickDescargarCV = async () => {
         window.open(CvDocumento, '_blank', 'noopener,noreferrer');
     }
+
     const onclickScroll = (id: string) => {
         setMenuAbierto(false);
-        console.log(window.innerHeight)
-        console.log(window.innerWidth);
         const elemento = document.getElementById(id);
         if (elemento) {
             elemento.scrollIntoView({
@@ -70,275 +68,260 @@ function PantallaPrincipal() {
     };
 
     const onClickAbrirEnlace = (URL: string = "") => {
-        window.open(URL)
+        window.open(URL, '_blank', 'noopener,noreferrer');
     }
+
     const onClickEmail = () => {
         const email = 'jesus_cermalopez@outlook.com';
         const asunto = encodeURIComponent('Contacto desde tu sitio web');
         const mensaje = encodeURIComponent('Hola Jesús,\n\nMe gustaría ponerme en contacto contigo...');
         window.location.href = `mailto:${email}?subject=${asunto}&body=${mensaje}`;
-        sumarEstadistica("Email")
     }
-    const sumarEstadistica = (texto: string = "") => {
-        const caso = 1;
-        switch (caso) {
-            case 1:
-                console.log(1)
-            //case 2:
-            ///       console.log(2)
-        }
-        console.log(texto)
-    }
+
     return (
         <>
-            <div className= {`contenedor-menu menu-sticky ${mostrarInfoMenu ? 'visible' : ''}`}>
+            <nav className={`contenedor-menu menu-sticky ${mostrarInfoMenu ? 'visible' : ''}`} aria-label="Navegación Principal">
                <div className={`menu-superior-mobile ${mostrarInfoMenu ? 'visible' : ''}`}>
                     <div className="menu-izquierda">
                         <span className="texto-principal"> BACKEND ENGINEER </span>
                         <span className="texto-nombre">JESÚS CERVANTES</span>
                     </div>
 
-                    <button className="btn-hamburguesa" onClick={toggleMenu} aria-label="Menú">
+                    <button className="btn-hamburguesa" onClick={toggleMenu} aria-label="Abrir Menú de Navegación">
                         {menuAbierto ? '✕' : '☰'}
                     </button>
-                </div>
-
+               </div>
 
                 <div className={`menu-derecha ${menuAbierto ? 'activo' : ''}`}>
                     <div className="menu-centro">
-                        <BtnComun onClick={() => onclickScroll('seccionExperiencia')} texto={'Experiencia'} />
-                        <BtnComun onClick={() => onclickScroll('seccionProyectos')} texto={'Proyectos'} />
+                        <a href="#seccionExperiencia" className="enlace-nav-seo" onClick={(e) => { e.preventDefault(); onclickScroll('seccionExperiencia'); }}>
+                            <BtnComun texto={'Experiencia'} />
+                        </a>
+                        <a href="#seccionProyectos" className="enlace-nav-seo" onClick={(e) => { e.preventDefault(); onclickScroll('seccionProyectos'); }}>
+                            <BtnComun texto={'Proyectos'} />
+                        </a>
                         <div className='div-boton-contactame'>
-                            <BtnComun onClick={() => onclickScroll('seccionContacto')} texto={'Contáctame'} />
+                            <a href="#seccionContacto" className="enlace-nav-seo" onClick={(e) => { e.preventDefault(); onclickScroll('seccionContacto'); }}>
+                                <BtnComun texto={'Contáctame'} />
+                            </a>
                         </div>
-
                         <CvIcono onClick={onclickDescargarCV} />
                     </div>
                 </div>
+            </nav>
 
-            </div>
-
-            <div className='tarjeta-intro'>
+            <header className='tarjeta-intro'>
                 <span className="texto-intro-pequeño">Hola, mi nombre es: </span>
                 <span className="texto-intro-grande"> JESÚS CERVANTES </span>
-                <span className="texto-intro-pequeño"> Y Soy </span>
-                 <h1 className="texto-intro-grande"> BACKEND ENGINEER  </h1>
-                <span className="texto-intro-pequeño"> Y creo herramientas </span>
-            </div>
+                <span className="texto-intro-pequeño"> Y soy </span>
+                <h1 className="texto-intro-grande"> BACKEND ENGINEER </h1>
+                <span className="texto-intro-pequeño"> Y creo soluciones de software </span>
+            </header>
 
-            <div className='contenedor-cuerpo'>
-                <div className='separacion-linea ' />
-                <h2 className="texto-nombre">About Me</h2>
-                <div className='tarjeta-tecnologia-sobre-mi'>
-                    <img
-                        src={Foto}
-                        className="foto"
-                        alt="Imagen"
-                    />
-                    <div className="texto-secundario" >
-                        Hola, yo soy  <span className="texto-resaltar"> Jesus </span><br />
-                        <span className="texto-resaltar"> Estudiante de Ingenería de Software, </span>
-                        me gusta el Backend Developer
-                        aunque tambien un entusiasta por la programación Full Stack,
-                        tengo experiencia academica y práctica en la creacion de APIs,
-                        diseño y manejo eficiente bases de datos, así como,
-                        control de calidad mediante pruebas,
-                        con el objetivo en construir software con alta confianza.
-                    {/* AQUÍ AGREGAS EL CÓDIGO DEL ENLACE INTERNO */}
-                    <br />
-                    Puedes revisar directamente mis <a href="#seccionProyectos" onClick={(e) => {e.preventDefault(); onclickScroll('seccionProyectos');}} style={{ color: '#217cec', textDecoration: 'underline' }}>proyectos destacados</a> aquí.</div>
-                </div>
-
-                <div className='separacion-linea ' />
-
-                <section id='seccionExperiencia' className='seccion-destino' />
-                <h2 className="texto-nombre"> The things that i know </h2>
-                <div className='contenedor-tarjetas-experiencia'>
-                    <div className='tarjeta-tecnologia-vertical'>
+            <main className='contenedor-cuerpo'>
+                <div className='separacion-linea' />
+                
+                <section aria-label="Sobre Mí">
+                    <h2 className="texto-nombre" aria-label="About Me - Perfil Profesional">About Me</h2>
+                    <div className='tarjeta-tecnologia-sobre-mi'>
+                        <img
+                            src={Foto}
+                            className="foto"
+                            alt="Fotografía profesional de Jesús Cervantes, Desarrollador Backend"
+                        />
                         <div className="texto-secundario">
-                            Backend: Desarrollo de APIs utilizando <strong>C#</strong> usando las siguientes tecnologías:
-                            .Net, ASP.NET Core Web APIs con implementación de conexiones y consultas a SQL Server.
-                        </div>
-                        <div className="contenido-logos">
-                            <img src={dotnetSVG} alt=".NET" className="icono-tech" title=".NET" />
-                            <img src={sqlSVG} alt="SQL Server" className="icono-tech" title="SQL Server" />
+                            Hola, yo soy <span className="texto-resaltar">Jesús</span>.<br />
+                            <span className="texto-resaltar">Estudiante de Ingeniería de Software,</span>
+                            apasionado por el desarrollo Backend e interesado en la programación Full Stack. 
+                            Tengo experiencia académica y práctica en la creación de APIs robustas,
+                            diseño y gestión eficiente de bases de datos, así como control de calidad mediante pruebas,
+                            enfocado en construir software confiable.<br />
+                            <br />
+                            Puedes revisar directamente mis <a href="#seccionProyectos" onClick={(e) => { e.preventDefault(); onclickScroll('seccionProyectos'); }} style={{ color: '#217cec', textDecoration: 'underline' }}>proyectos destacados</a> aquí.
                         </div>
                     </div>
-                    <div className='tarjeta-tecnologia-vertical'>
-                        <div className="texto-secundario">
-                            He hecho de FULL STACK usando el framework de Odoo usando tanto <strong>python</strong> como <strong>XML</strong>.
-                            Además de implementar Control de versiones con GitHub.
+                </section>
+
+                <div className='separacion-linea' />
+
+                <section id='seccionExperiencia' className='seccion-destino' aria-label="Experiencia y Habilidades Técnicas">
+                    <h2 className="texto-nombre" aria-label="The things that I know - Stack Tecnológico">The things that I know</h2>
+
+                    <div className='contenedor-tarjetas-experiencia'>
+                        <div className='tarjeta-tecnologia-vertical'>
+                            <div className="texto-secundario">
+                                <strong>Backend:</strong> Desarrollo de APIs utilizando <strong>C#</strong> y tecnologías como 
+                                .NET, ASP.NET Core Web APIs con implementación de conexiones y consultas avanzadas a SQL Server.
+                            </div>
+                            <div className="contenido-logos">
+                                <img src={dotnetSVG} alt=".NET Framework y C#" className="icono-tech" title=".NET" />
+                                <img src={sqlSVG} alt="SQL Server Base de Datos" className="icono-tech" title="SQL Server" />
+                            </div>
                         </div>
-                        <div className="contenido-logos">
-                            <img src={pythonSVG} alt="Python" className="icono-tech" title="Python" />
-                            <img src={odooSVG} alt="Odoo" className="icono-tech" title="Odoo" />
-                            <img src={githubSVG} alt="GitHub" className="icono-tech" title="GitHub" />
+                        <div className='tarjeta-tecnologia-vertical'>
+                            <div className="texto-secundario">
+                                Desarrollo <strong>Full Stack</strong> usando el framework Odoo con <strong>Python</strong> y <strong>XML</strong>, 
+                                además de implementar control de versiones profesional con GitHub.
+                            </div>
+                            <div className="contenido-logos">
+                                <img src={pythonSVG} alt="Python Desarrollo" className="icono-tech" title="Python" />
+                                <img src={odooSVG} alt="Odoo ERP Framework" className="icono-tech" title="Odoo" />
+                                <img src={githubSVG} alt="GitHub Control de Versiones" className="icono-tech" title="GitHub" />
+                            </div>
+                        </div>
+                        <div className='tarjeta-tecnologia-vertical'>
+                            <div className="texto-secundario">
+                                <strong>Frontend:</strong> Experiencia usando <strong>TypeScript</strong> en el diseño de interfaces web modernas con la librería React.
+                            </div>
+                            <div className="contenido-logos">
+                                <img src={typescriptSVG} alt="TypeScript Lenguaje" className="icono-tech" title="TypeScript" />
+                                <img src={reactSVG} alt="React Librería JS" className="icono-tech" title="React" />
+                                <img src={cssSVG} alt="Diseño CSS" className="icono-tech" title="CSS" />
+                            </div>
                         </div>
                     </div>
-                    <div className='tarjeta-tecnologia-vertical'>
-                        <div className="texto-secundario">
-                            Frontend: Experiencia usando <strong>TypeScript</strong> en el diseño de páginas web usando la librería React.
-                        </div>
-                        <div className="contenido-logos">
-                            <img src={typescriptSVG} alt="TypeScript" className="icono-tech" title="TypeScript" />
-                            <img src={reactSVG} alt="React" className="icono-tech" title="React" />
-                            <img src={cssSVG} alt="CSS" className="icono-tech" title="CSS" />
-                        </div>
-                    </div>
-                </div>
+                </section>
 
                 <div className='separacion-linea' />
                 
-                <section id='seccionContacto' className='seccion-destino' />
-                <h2 className="texto-nombre">Me on the web </h2>
+                <section id='seccionContacto' className='seccion-destino' aria-label="Contacto y Redes Profesionales">
+                    <h2 className="texto-nombre" aria-label="Me on the web - Canales de Contacto">Me on the web</h2>
 
-                <div className='div-columnas-certificado'>
-                    <div className="columna-certificado">
-                        <div className='div-certificado'>
-                            <div className='tarjeta-tecnologia-contacto '>
-                                <BtnIcono onClick={
-                                    () => { onClickAbrirEnlace('https://github.com/Divinepath6') }}
-                                    icono={githubSVG} alt='Github' />
-                                <div className="texto-secundario">
-                                    Mi Github donde esta más a fondo los proyectos en lo que he participado
+                    <div className='div-columnas-certificado'>
+                        <div className="columna-certificado">
+                            <div className='div-certificado'>
+                                <div className='tarjeta-tecnologia-contacto'>
+                                    <BtnIcono onClick={() => { onClickAbrirEnlace('https://github.com/Divinepath6') }} icono={githubSVG} alt='GitHub Profile' />
+                                    <div className="texto-secundario">
+                                        Mi perfil de GitHub con repositorios detallados de mis proyectos.
+                                    </div>
+                                </div>
+                                <div className='tarjeta-tecnologia-contacto'>
+                                    <BtnIcono onClick={() => { onClickEmail() }} icono={mailSVG} alt='Enviar Correo Electrónico' />
+                                    <div className="texto-secundario">
+                                        Escríbeme un correo electrónico para ponernos en contacto.
+                                    </div>
                                 </div>
                             </div>
-                            <div className='tarjeta-tecnologia-contacto' >
-                                <BtnIcono onClick={
-                                    () => { onClickEmail() }}
-                                    icono={mailSVG} alt='EMAIL' />
+                        </div>
+
+                        <div className="columna-certificado">
+                            <div className='tarjeta-tecnologia-contacto'>
+                                <BtnIcono onClick={() => { onClickAbrirEnlace('https://www.linkedin.com/in/jes%C3%BAs-cervantes-l%C3%B3pez-15b034330/') }} icono={linkedinSVG} alt='Perfil de LinkedIn' />
                                 <div className="texto-secundario">
-                                    Enviame un correo, si quieres contactarme
+                                    Conecta conmigo a través de mi perfil profesional en LinkedIn.
                                 </div>
                             </div>
-
-                        </div>
-                    </div>
-
-                    <div className="columna-certificado">
-                        <div className='tarjeta-tecnologia-contacto '>
-                            <BtnIcono onClick={
-                                () => { onClickAbrirEnlace('https://www.linkedin.com/in/jes%C3%BAs-cervantes-l%C3%B3pez-15b034330/') }}
-                                icono={linkedinSVG} alt='Linkedin' />
-                            <div className="texto-secundario">
-                                Mi perfil de Linkedin
-                            </div>
-                        </div>
-                        <div className='tarjeta-tecnologia-contacto '>
-                            <div className="texto-nombre">
-                                +(52)<br/>
-                                668-275-2581
-                            </div>
-                            <div className="texto-secundario">
-                                Mi telefono de contacto, abierto para Whatsapp
+                            <div className='tarjeta-tecnologia-contacto'>
+                                <div className="texto-nombre">
+                                    +(52)<br/>
+                                    668-275-2581
+                                </div>
+                                <div className="texto-secundario">
+                                    Teléfono de contacto directo, disponible vía WhatsApp.
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-
-
+                </section>
 
                 <div className='separacion-linea' />
-                <section id='seccionProyectos' className='seccion-destino' />
-                <h2 className="texto-nombre">The things that i made </h2>               
-                <div className='div-columnas'>
-                    <div className="columna-1">
-                        <div className="tarjeta-proyecto" >
-                            <video
-                                className="video-proyecto"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                            >
-                                <source src={proyecto_1_video} type="video/mp4" />
-                                Tu navegador no soporta la reproducción de video.
-                            </video>
-                            <div className="texto-secundario">
-                                Modulo desarrollado en el framework de  <strong> Odoo </strong>
-                                con el una herramienta capas de realizar cotizaciones y 
-                                una apoyo de logística de operaciones  
-                                para la compañia Rack Industries.
-                            </div>
-                            <BtnComun onClick={
-                                () => { onClickAbrirEnlace("https://github.com/Divinepath6/Log-stica") }}
-                                texto={'Ver más del proyecto'}
-                                title='Ver Codigo'
-                            />
-                        </div>
-                    </div>
 
-                    <div className="columna-2">
-                        <div className='div-filas'>
+
+                <section id='seccionProyectos' className='seccion-destino' aria-label="Proyectos Destacados">
+                    <h2 className="texto-nombre" aria-label="The things that I made - Proyectos de Software">The things that I made</h2>             
+                    <div className='div-columnas'>
+                        <div className="columna-1">
                             <div className="tarjeta-proyecto">
-                                <img
-                                    src="ruta-de-tu-imagen.jpg"
-                                    alt="Proyecto"
-                                    className="imagen-proyecto"
-                                />
-                                <BtnComun onClick={
-                                    () => { onClickAbrirEnlace('https://github.com/Divinepath6') }}
-                                    texto={'Ver más'}
-                                    title='Ver Codigo'
-                                />
-                            </div>
-                            <div className="tarjeta-proyecto">
-                                <img
-                                    src="ruta-de-tu-imagen.jpg"
-                                    alt="Proyecto"
-                                    className="imagen-proyecto"
-                                />
-                                <BtnComun onClick={
-                                    () => { onClickAbrirEnlace('https://github.com/Divinepath6') }}
-                                    texto={'Ver más'}
-                                    title='Ver Codigo'
+                                <video
+                                    className="video-proyecto"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                >
+                                    <source src={proyecto_1_video} type="video/mp4" />
+                                    Tu navegador no soporta la reproducción de video.
+                                </video>
+                                <div className="texto-secundario">
+                                    Módulo desarrollado en el framework <strong>Odoo</strong> como herramienta capaz de realizar cotizaciones y 
+                                    servir de apoyo logístico para operaciones de la compañía Rack Industries.
+                                </div>
+                                <BtnComun 
+                                    onClick={() => { onClickAbrirEnlace("https://github.com/Divinepath6/Log-stica") }} 
+                                    texto={'Ver más del proyecto'}
+                                    title='Ver Código Fuente'
                                 />
                             </div>
                         </div>
-                    </div>
 
-                </div>
-
-
-
-                <div className='separacion-linea ' />
-                <h2 className="texto-nombre"> The things that i learn </h2>
-
-                <div className='div-columnas-certificado'>
-                    <div className="columna-certificado">
-                        <div className='div-certificado'>
-                            <div className="tarjeta-proyecto" >
-                                <img
-                                    src="ruta-de-tu-imagen.jpg"
-                                    alt="Certificado"
-                                    className="imagen-proyecto"
-                                />
-                            </div>
-                            <div className="tarjeta-proyecto" >
-                                <PDFVisor archivoPdf={programador_C_PDF} ></PDFVisor>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div className="columna-certificado">
-                        <div className='div-certificado'>
-                            <div className="tarjeta-proyecto">
-                                <PDFVisor archivoPdf={administrador_BD_no_relacionales_PDF} ></PDFVisor>
-                            </div>
-                            <div className="tarjeta-proyecto">
-                                <PDFVisor archivoPdf={administrador_BD_relacionales_PDF} ></PDFVisor>
+                        <div className="columna-2">
+                            <div className='div-filas'>
+                                <div className="tarjeta-proyecto">
+                                    <img
+                                        src="ruta-de-tu-imagen.jpg"
+                                        alt="Captura de proyecto de software"
+                                        className="imagen-proyecto"
+                                    />
+                                    <BtnComun 
+                                        onClick={() => { onClickAbrirEnlace('https://github.com/Divinepath6') }} 
+                                        texto={'Ver más'}
+                                        title='Ver Código Fuente'
+                                    />
+                                </div>
+                                <div className="tarjeta-proyecto">
+                                    <img
+                                        src="ruta-de-tu-imagen.jpg"
+                                        alt="Captura de proyecto adicional de desarrollo"
+                                        className="imagen-proyecto"
+                                    />
+                                    <BtnComun 
+                                        onClick={() => { onClickAbrirEnlace('https://github.com/Divinepath6') }} 
+                                        texto={'Ver más'}
+                                        title='Ver Código Fuente'
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
 
-                </div>
-
-            </div>
-
+                <div className='separacion-linea' />
 
 
+                <section aria-label="Certificados y Formación Académica">
+                    <h2 className="texto-nombre" aria-label="The things that I learn - Certificaciones">The things that I learn</h2>
+
+                    <div className='div-columnas-certificado'>
+                        <div className="columna-certificado">
+                            <div className='div-certificado'>
+                                <div className="tarjeta-proyecto">
+                                    <img
+                                        src="ruta-de-tu-imagen.jpg"
+                                        alt="Certificado de estudios de programación"
+                                        className="imagen-proyecto"
+                                    />
+                                </div>
+                                <div className="tarjeta-proyecto">
+                                    <PDFVisor archivoPdf={programador_C_PDF}></PDFVisor>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="columna-certificado">
+                            <div className='div-certificado'>
+                                <div className="tarjeta-proyecto">
+                                    <PDFVisor archivoPdf={administrador_BD_no_relacionales_PDF}></PDFVisor>
+                                </div>
+                                <div className="tarjeta-proyecto">
+                                    <PDFVisor archivoPdf={administrador_BD_relacionales_PDF}></PDFVisor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
         </>
     )
 }
