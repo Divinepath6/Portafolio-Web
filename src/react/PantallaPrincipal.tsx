@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 
 import CvIcono from '../components/BtnCv'
 import BtnComun from '../components/BtnComun'
-
 import BtnIcono from '../components/BtnIcono'
 import PDFVisor from '../components/PdfVisor'
+
 //SVG
 import pythonSVG from '../assets/Icons/python.svg'
 import dotnetSVG from '../assets/Icons/dotnet.svg'
@@ -17,16 +17,16 @@ import odooSVG from '../assets/Icons/odoo.svg'
 import cssSVG from '../assets/Icons/css.svg'
 import mailSVG from '../assets/Icons/mail.svg'
 import linkedinSVG from '../assets/Icons/linkedin.svg'
+
 // PFDS
 import administrador_BD_relacionales_PDF from '../assets/files/administrador_de_BD_relacionales.pdf'
 import administrador_BD_no_relacionales_PDF from '../assets/files/Administrador_de_BD_no.pdf'
 import programador_C_PDF from '../assets/files/programador_en_C.pdf'
+
 //recursos
 import proyecto_1_video from '../assets/proyecto_1/Video_placeholder.mp4'
 import Foto from '../assets/files/Foto.png'
-
 import CvDocumento from '../assets/files/CV.pdf'
-
 
 
 
@@ -114,7 +114,7 @@ function PantallaPrincipal() {
                 <span className="texto-intro-pequeño">Hola, mi nombre es: </span>
                 <span className="texto-intro-grande"> JESÚS CERVANTES </span>
                 <span className="texto-intro-pequeño"> Y soy </span>
-                <h1 className="texto-intro-grande"> BACKEND ENGINEER </h1>
+                <h1 className="texto-intro-grande"> DESARROLLADOR BACKEND </h1>
                 <span className="texto-intro-pequeño"> Y creo soluciones de software </span>
             </header>
 
@@ -150,7 +150,7 @@ function PantallaPrincipal() {
                     <div className='contenedor-tarjetas-experiencia'>
                         <div className='tarjeta-tecnologia-vertical'>
                             <div className="texto-secundario">
-                                <strong>Backend:</strong> Desarrollo de APIs utilizando <strong>C#</strong> y tecnologías como 
+                                <strong>Desarrollador Backend:</strong>En APIs utilizando <strong>C#</strong> y tecnologías como 
                                 .NET, ASP.NET Core Web APIs con implementación de conexiones y consultas avanzadas a SQL Server.
                             </div>
                             <div className="contenido-logos">
@@ -171,7 +171,7 @@ function PantallaPrincipal() {
                         </div>
                         <div className='tarjeta-tecnologia-vertical'>
                             <div className="texto-secundario">
-                                <strong>Frontend:</strong> Experiencia usando <strong>TypeScript</strong> en el diseño de interfaces web modernas con la librería React.
+                                <strong>Desarrollo Frontend:</strong> Experiencia usando <strong>TypeScript</strong> en el diseño de interfaces web modernas con la librería React.
                             </div>
                             <div className="contenido-logos">
                                 <img src={typescriptSVG} alt="TypeScript Lenguaje" className="icono-tech" title="TypeScript" />
